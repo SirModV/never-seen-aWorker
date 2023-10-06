@@ -9,7 +9,7 @@ const {
   addEmployee,
   updateEmployeeRole,
 } = require("./queries");
-
+// coded with help from coding tutor
 const start = async () => {
   const answer = await inquirer.prompt([
     {
