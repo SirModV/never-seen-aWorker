@@ -1,6 +1,5 @@
-const mysql = require("mysql2/promise");
-// coded wth help from stack overflow 
-const connection = mysql.createPool({
+const mysql = require("mysql2");
+const pool = mysql.createPool({
   host: "localhost",
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
@@ -10,4 +9,6 @@ const connection = mysql.createPool({
   queueLimit: 0,
 });
 
-module.exports = connection;
+const promisePool = pool.promise();
+
+module.exports = promisePool;
